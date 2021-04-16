@@ -1,26 +1,41 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <SingleOffice />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import SingleOffice from "./components/SingleOffice.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    SingleOffice,
+  },
+};
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+@font-face {
+  font-family: "FiraGO";
+  src: local("FiraGO"),
+    url("./assets/fonts/FiraGO-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Adieu";
+  src: local("Adieu"), url("./assets/fonts/Adieu-Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Gotham";
+  src: local("Gotham-Book"),
+    url("./assets/fonts/Gotham-Book.ttf") format("truetype");
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  background: #f3f3f3;
 }
 </style>

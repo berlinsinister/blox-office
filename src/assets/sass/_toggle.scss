@@ -1,0 +1,67 @@
+$beige: #b69977;
+
+.toggle {
+  cursor: pointer;
+  display: inline-block;
+}
+.toggle-switch {
+  display: inline-block;
+  background: white;
+  border-radius: 16px;
+  width: 60px;
+  height: 20px;
+  position: relative;
+  vertical-align: middle;
+  transition: background 0.25s;
+  &:before {
+    content: '';
+    display: block;
+    background: $beige;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    transition: left 0.25s;
+  }
+  &:after {
+    position: absolute;
+    right: 8px;
+    font-weight: bold;
+    font-size: 12px;
+    font-family: 'Adieu', sans-serif;
+  }
+  .toggle:hover &:before {
+    background: rgba($beige, 0.8);
+  }
+  .toggle-checkbox:checked + & {
+    background: white;
+    &:before {
+      left: 40px;
+    }
+  }
+}
+.rental-price {
+  &:after {
+    content: 'm';
+    top: 1px;
+  }
+}
+.selling-price {
+  &:after {
+    content: '$';
+    top: 2px;
+  }
+}
+/* remove $ and m after toggle */
+.toggle-checkbox:checked + .toggle-switch::after {
+  content: '';
+}
+.toggle-checkbox {
+  position: absolute;
+  visibility: hidden;
+}
+.toggle-label {
+  margin-left: 5px;
+  position: relative;
+  top: 2px;
+}
